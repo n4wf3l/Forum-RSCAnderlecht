@@ -1,3 +1,4 @@
+using FluentAssertions.Common;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,7 @@ builder.Services.Configure<MailKitOptions>(options =>
     options.SenderName = builder.Configuration["ExternalProviders:MailKit:SMTP:SenderName"];
     options.Security = false; 
 });
+
 
 var app = builder.Build();
 
