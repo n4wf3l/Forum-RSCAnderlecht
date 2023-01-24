@@ -46,7 +46,7 @@ namespace RSCAnderlechtF.Data
             user1.PasswordHash = passwordHasher.HashPassword(user1, "User1-123");
             admin1.PasswordHash = passwordHasher.HashPassword(admin1, "Admin1-123");
 
-            builder.Entity<IdentityUser>().HasData(user1);
+            builder.Entity<IdentityUser>().HasData(user1, admin1);
             #endregion
 
             #region Roles
