@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Post>
+@{
+}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <b>+</b> Create New Post
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" action="createpost">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> 
+                <textarea class="form-control" name="Content" placeholder="type content"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Update Post</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Content</th>
+            <th scope="col">Comments</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Post p in Model)
+        {
+            <tr>
+                <th scope="row">@p.Id</th>
+                <td>@p.Content</td>
+                <td>25</td>
+                <td>24 JAN 2023</td>
+                <td>
+                    <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/84/84380.png" />
+                    <form asp-route-postId="@p.Id" method="post"asp-action="deletepost">
+                        <button type="submit">
+                            <img width="20px" height="20px" src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" />
+
+
+                        </button>
+
+                    </form>
+                    </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

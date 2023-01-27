@@ -1,8 +1,43 @@
-﻿@{
+﻿@model IEnumerable<Post>
+@{
     ViewData["Title"] = "Home Page";
 }
 
+
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h1 class="display-4">Welcome.!!</h1>
+    <b>Your Recent News Feed</a>.</b> 
+</div><br /><br />
+
+@foreach (Post p in Model)
+{
+    <div class="card shadow" style="width: 38rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">
+                Posted By
+            </h6>
+            <h5 class="card-title">@p.User.NormalizedUserName</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Posted At: @p.CreateAt
+            </h6> <hr>
+            <p class="card-text">@p.Content</p>
+            <a href="#" class="card-link">
+                <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/126/126473.png" />
+                23
+            </a>
+            <a asp-route-postId="@p.Id" asp-controller="PostManagement" asp-action="PostDetails" class="card-link">
+                <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
+                @p.Comments.Count
+            </a>
+            <a class="card-link">
+                <img width="30px" height="30px" src="https://toppng.com/uploads/preview/share-png-file-share-icon-free-download-1156313309811bbndeiii.png" />
+                2
+            </a>
+        </div>
+    </div>
+    <br />
+
+}
+
+

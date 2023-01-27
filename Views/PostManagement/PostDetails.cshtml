@@ -1,0 +1,203 @@
+﻿@model Post
+@{
+}
+
+
+<style>
+body{
+    background-color:#e9ebee;
+}
+
+.be-comment-block {
+    margin-bottom: 50px !important;
+    border: 1px solid #edeff2;
+    border-radius: 2px;
+    padding: 10px 70px;
+    border:1px solid #ffffff;
+}
+
+.comments-title {
+    font-size: 16px;
+    color: #262626;
+    margin-bottom: 15px;
+    font-family: 'Conv_helveticaneuecyr-bold';
+}
+
+.be-img-comment {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.be-ava-comment {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.be-comment-content {
+    margin-left: 80px;
+}
+
+.be-comment-content span {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.be-comment-name {
+    font-size: 13px;
+    font-family: 'Conv_helveticaneuecyr-bold';
+}
+
+.be-comment-content a {
+    color: #383b43;
+}
+
+.be-comment-content span {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.be-comment-time {
+    text-align: right;
+}
+
+.be-comment-time {
+    font-size: 11px;
+    color: #b4b7c1;
+}
+
+.be-comment-text {
+    font-size: 13px;
+    line-height: 18px;
+    color: #7a8192;
+    display: block;
+    background: #f6f6f7;
+    border: 1px solid #edeff2;
+    padding: 15px 20px 20px 20px;
+}
+
+.form-group.fl_icon .icon {
+    position: absolute;
+    top: 1px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    background: #f6f6f7;
+    color: #b5b8c2;
+    text-align: center;
+    line-height: 50px;
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.form-group .form-input {
+    font-size: 13px;
+    line-height: 50px;
+    font-weight: 400;
+    color: #b4b7c1;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #edeff2;
+    border-radius: 3px;
+}
+
+.form-group.fl_icon .form-input {
+    padding-left: 70px;
+}
+
+.form-group textarea.form-input {
+    height: 80px;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+<div class="container">
+
+    <div class="card shadow" style="width: 38rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">
+                Posted By
+            </h6>
+            <h5 class="card-title">@Model.User.NormalizedUserName</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Posted At: @Model.CreateAt
+            </h6> <hr>
+            <p class="card-text">@Model.Content</p>
+            <a href="#" class="card-link">
+                <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/126/126473.png" />
+                23
+            </a>
+            <a asp-route-postId="@Model.Id" asp-controller="PostManagement" asp-action="PostDetails" class="card-link">
+                <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
+                5
+            </a>
+            <a class="card-link">
+                <img width="30px" height="30px" src="https://toppng.com/uploads/preview/share-png-file-share-icon-free-download-1156313309811bbndeiii.png" />
+                2
+            </a>
+        </div>
+    </div>
+<br />
+<div class="be-comment-block">
+    <form class="form-block" method="post" action="createcomment">
+		<div class="row">
+			<div class="col-6">									
+				<div class="form-group">
+					<textarea name="body" class="form-input" required="" placeholder="Your text"></textarea>
+                    <input style="display:none" asp-for="@Model.Id"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Upload Comment</button>
+				</div>
+		</div>
+	</form>
+	<h1 class="comments-title">Comments (@Model.Comments.Count)</h1>
+            @if (@Model.Comments.Any())
+        {
+            @foreach(Comment comment in Model.Comments){
+            <div class="be-comment">
+                <div class="be-img-comment">
+                    <a href="blog-detail-2.html">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="be-ava-comment">
+                    </a>
+                </div>
+                <div class="be-comment-content">
+
+                    <span class="be-comment-name">
+                        <a href="blog-detail-2.html">@comment.User.UserName</a>
+                    </span>
+                    <span class="be-comment-time">
+                        <i class="fa fa-clock-o"></i>
+                        @comment.CreatedAt
+                    </span>
+
+                    <p class="be-comment-text">
+                        @comment.Body
+                    </p>
+                </div>
+                </div>
+
+            }
+
+        } else{
+            <p>No Comment Posted Yet...</p>
+        }
+</div>
+</div>

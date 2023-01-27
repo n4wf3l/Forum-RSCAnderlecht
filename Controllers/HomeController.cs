@@ -18,7 +18,18 @@ namespace RSCAnderlechtF.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            return View();
+            using(var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            {
+                var allPosts = _context.Posts.Select(p => new Post
+                {
+                    Content = p.Content,
+                    User = p.User,
+                    CreateAt = p.CreateAt,
+                    Id = p.Id,
+                    Comments = p.Comments,
+                }).ToList();
+                return View(allPosts);
+            }
         }
 
         public IActionResult Privacy()
