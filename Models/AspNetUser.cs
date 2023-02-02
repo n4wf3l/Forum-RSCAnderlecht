@@ -12,6 +12,7 @@ namespace RSCAnderlechtF.Models
             AspNetUserTokens = new HashSet<AspNetUserToken>();
             Comments = new HashSet<Comment>();
             Posts = new HashSet<Post>();
+            UserRoles = new HashSet<AspNetUserRole>();
             Roles = new HashSet<AspNetRole>();
         }
 
@@ -36,6 +37,7 @@ namespace RSCAnderlechtF.Models
         public virtual ICollection<AspNetUserToken> AspNetUserTokens { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<AspNetUserRole> UserRoles { get; set; }
 
         public virtual ICollection<AspNetRole> Roles { get; set; }
     }

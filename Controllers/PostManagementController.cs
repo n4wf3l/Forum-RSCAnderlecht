@@ -42,7 +42,7 @@ namespace RSCAnderlechtF.Controllers
                 try
                 {
                     _context.SaveChanges();
-                    return View("MyPosts", _context.Posts.ToList() );
+                    return View("MyPosts", _context.Posts.Where(u => u.UserId == currentUser.Id).ToList() );
 
                 }
                 catch (Exception e)
@@ -142,6 +142,24 @@ namespace RSCAnderlechtF.Controllers
                 {
                     return NotFound();
                 }
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SearchPost(string keyword)
+        {
+            using(var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            {
+                var searchResult = _context.Posts.Where(p => p.Content.Contains(keyword)).Select(p => new Post
+                {
+                    Content = p.Content,
+                    User = p.User,
+                    CreateAt = p.CreateAt,
+                    Id = p.Id,
+                    Comments = p.Comments,
+                }).ToList();
+
+                return View("SearchResult" , searchResult);
             }
         }
 

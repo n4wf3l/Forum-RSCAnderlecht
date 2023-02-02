@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RSCAnderlechtF.Migrations
 {
-    public partial class test : Migration
+    public partial class test2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -70,6 +70,30 @@ namespace RSCAnderlechtF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AspNetRoleAspNetUser",
+                columns: table => new
+                {
+                    RolesId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsersId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoleAspNetUser", x => new { x.RolesId, x.UsersId });
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleAspNetUser_AspNetRoles_RolesId",
+                        column: x => x.RolesId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleAspNetUser_AspNetUsers_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
@@ -114,24 +138,24 @@ namespace RSCAnderlechtF.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
+                    table.PrimaryKey("PK_AspNetUserRoles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        name: "FK__AspNetUserRole__RoleId__5CD6CB2B",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        name: "FK__AspNetUserRole__UserId__5CD6CB2B",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +178,52 @@ namespace RSCAnderlechtF.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    CreateAt = table.Column<DateTime>(type: "datetime", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK__Posts__UserId__5CD6CB2B",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Body = table.Column<string>(type: "nvarchar(550)", maxLength: 550, nullable: false),
+                    PostId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK__Table__PostId__70DDC3D8",
+                        column: x => x.PostId,
+                        principalTable: "Posts",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK__Table__UserId__6FE99F9F",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -168,19 +238,24 @@ namespace RSCAnderlechtF.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", 0, "164992b3-9b20-49c3-a6d3-a21edc86ec4c", "admin1@test.com", true, false, null, "ADMIN1@TEST.COM", "ADMIN1@TEST.COM", "AQAAAAEAACcQAAAAEP41JtVcgn0MuqupQVn1FJ+5dUa2NBDCAwI4z5PO0+td8KPKnH20KWNbmax802xzcg==", null, false, "df721f4e-bc85-43b8-962d-1b7553930c9f", false, "admin1@test.com" },
-                    { "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", 0, "db3eab0c-f466-4ae9-968f-2401698034cd", "user1@user.com", true, false, null, "USER1@USER.COM", "USER1@USER.COM", "AQAAAAEAACcQAAAAEImcDA6qYBniS9Vk+AnQw9xlryq08MasPjU+xbwdnACTQeE5Rzv/XSHIFGKUXRwtMg==", null, false, "452ea1ac-30e4-400d-9820-0e6a0f3bb1a3", false, "user1@user.com" }
+                    { "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", 0, null, "admin1@test.com", true, false, null, "ADMIN1@TEST.COM", "ADMIN1@TEST.COM", "AQAAAAEAACcQAAAAEKG933c+kq2ezRJby6DA6n9Z3Xzv59Rp/XGM53ACRNUmSQdKUEdxvcq9I3gwMsz5FA==", null, false, "09a7186a-3efa-4f11-aa44-7c9e4be20c43", false, "admin1@test.com" },
+                    { "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", 0, null, "user1@user.com", true, false, null, "USER1@USER.COM", "USER1@USER.COM", "AQAAAAEAACcQAAAAEE8o0+j2RecVDweV5B9cdXvgSyvLRVrHjyt7rtPjwvPpkeO23+9buIBfpO5EWSPtcw==", null, false, "cdead4bc-8413-4f1a-91f6-166a085d7e8d", false, "user1@user.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "68bdf9cb-4866-444d-8cf5-56d54170dc81", "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" });
+                columns: new[] { "Id", "RoleId", "UserId" },
+                values: new object[] { 1, "544ac087-b472-4914-8104-a55bd381d0e9", "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "544ac087-b472-4914-8104-a55bd381d0e9", "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" });
+                columns: new[] { "Id", "RoleId", "UserId" },
+                values: new object[] { 2, "68bdf9cb-4866-444d-8cf5-56d54170dc81", "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetRoleAspNetUser_UsersId",
+                table: "AspNetRoleAspNetUser",
+                column: "UsersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -192,7 +267,7 @@ namespace RSCAnderlechtF.Migrations
                 table: "AspNetRoles",
                 column: "NormalizedName",
                 unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                filter: "([NormalizedName] IS NOT NULL)");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -210,6 +285,11 @@ namespace RSCAnderlechtF.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_UserId",
+                table: "AspNetUserRoles",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
@@ -219,11 +299,29 @@ namespace RSCAnderlechtF.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                filter: "([NormalizedUserName] IS NOT NULL)");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_PostId",
+                table: "Comments",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_UserId",
+                table: "Comments",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_UserId",
+                table: "Posts",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AspNetRoleAspNetUser");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -240,7 +338,13 @@ namespace RSCAnderlechtF.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Comments");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Posts");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

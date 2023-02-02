@@ -15,7 +15,6 @@ namespace RSCAnderlechtF.Controllers
             _logger = logger;
         }
 
-        [AllowAnonymous]
         public IActionResult Index()
         {
             using(var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())

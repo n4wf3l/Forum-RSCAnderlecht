@@ -27,11 +27,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="PostManagement" asp-action="MyPosts">My Posts</a>
                         </li>
-                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin")){
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="UserManagement" asp-action="Index">User Management</a>
+                            </li>
+                        }
+                        @*@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin")){
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">Manage roles</a>
                         </li>
-                        }
+                        }*@
 
                     </ul>
                     <partial name="_LoginPartial" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -22,6 +23,7 @@ namespace RSCAnderlechtF.Models
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; } = null!;
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; } = null!;
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; } = null!;
+        public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; } = null!;
         public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Post> Posts { get; set; } = null!;
 
@@ -45,6 +47,24 @@ namespace RSCAnderlechtF.Models
                 entity.Property(e => e.Name).HasMaxLength(256);
 
                 entity.Property(e => e.NormalizedName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<AspNetUserRole>(entity =>
+            {
+                entity.Property(e => e.UserId).HasMaxLength(450);
+
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__AspNetUserRole__UserId__5CD6CB2B");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__AspNetUserRole__RoleId__5CD6CB2B");
             });
 
             modelBuilder.Entity<AspNetRoleClaim>(entity =>
@@ -71,21 +91,6 @@ namespace RSCAnderlechtF.Models
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
-
-                entity.HasMany(d => d.Roles)
-                    .WithMany(p => p.Users)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "AspNetUserRole",
-                        l => l.HasOne<AspNetRole>().WithMany().HasForeignKey("RoleId"),
-                        r => r.HasOne<AspNetUser>().WithMany().HasForeignKey("UserId"),
-                        j =>
-                        {
-                            j.HasKey("UserId", "RoleId");
-
-                            j.ToTable("AspNetUserRoles");
-
-                            j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
-                        });
             });
 
             modelBuilder.Entity<AspNetUserClaim>(entity =>
@@ -161,7 +166,57 @@ namespace RSCAnderlechtF.Models
                     .HasConstraintName("FK__Posts__UserId__5CD6CB2B");
             });
 
+
+            seedData(modelBuilder);
+
             OnModelCreatingPartial(modelBuilder);
+
+        }
+
+        private void seedData(ModelBuilder builder)
+        {
+
+            var user1 = new AspNetUser()
+            {
+                Id = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1",
+                Email = "user1@user.com",
+                NormalizedEmail = "USER1@USER.COM",
+                UserName = "user1@user.com",
+                NormalizedUserName = "USER1@USER.COM",
+                EmailConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString(),
+            };
+
+            var admin1 = new AspNetUser()
+            {
+                Id = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb",
+                Email = "admin1@test.com",
+                NormalizedEmail = "ADMIN1@TEST.COM",
+                UserName = "admin1@test.com",
+                NormalizedUserName = "ADMIN1@TEST.COM",
+                EmailConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString(),
+            };
+
+            var passwordHasher = new PasswordHasher<AspNetUser>();
+            user1.PasswordHash = passwordHasher.HashPassword(user1, "User1-123");
+            admin1.PasswordHash = passwordHasher.HashPassword(admin1, "Admin1-123");
+
+            builder.Entity<AspNetUser>().HasData(user1, admin1);
+
+            builder.Entity<AspNetRole>().HasData(
+                new AspNetRole() { Id = "68bdf9cb-4866-444d-8cf5-56d54170dc81", Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "ADMIN" },
+                new AspNetRole() { Id = "544ac087-b472-4914-8104-a55bd381d0e9", Name = "User", ConcurrencyStamp = "2", NormalizedName = "USER" }
+                );
+
+
+            #region Assign roles to users
+            builder.Entity<AspNetUserRole>().HasData(
+                new AspNetUserRole() {Id=1, RoleId = "544ac087-b472-4914-8104-a55bd381d0e9", UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" },
+                new AspNetUserRole() {Id = 2,  RoleId = "68bdf9cb-4866-444d-8cf5-56d54170dc81", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" }
+                );
+            #endregion
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

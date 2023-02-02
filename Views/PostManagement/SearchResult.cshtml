@@ -1,26 +1,13 @@
 ﻿@model IEnumerable<Post>
 @{
-    ViewData["Title"] = "Home Page";
 }
 
+<h2>Search Result</h2>
 
+<p>Result Found @Model.Count()</p>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome.!!</h1>
-    <b>Your Recent News Feed</a>.</b> 
-</div><br /><br />
+@if(Model.Any()){
 
-<form method="post" action="postmanagement/SearchPost">
-    <div>
-        <input class="form-control" name="keyword" placeholder="Search..." /> 
-        <button type="submit" class="btn btn-primary btn-xs">Go!</button>
-    </div>
-
-</form>
-
-
-@if (Model.Any())
-{
     @foreach (Post p in Model)
     {
         <div class="card shadow" style="width: 38rem;">
@@ -48,9 +35,6 @@
             </div>
         </div>
         <br />
+
     }
-}else{
-    <p>No Posts for You Yet...</p>
 }
-
-

@@ -9,6 +9,7 @@ namespace RSCAnderlechtF.Models
         {
             AspNetRoleClaims = new HashSet<AspNetRoleClaim>();
             Users = new HashSet<AspNetUser>();
+            UserRoles = new HashSet<AspNetUserRole>();
         }
 
         public string Id { get; set; } = null!;
@@ -19,5 +20,6 @@ namespace RSCAnderlechtF.Models
         public virtual ICollection<AspNetRoleClaim> AspNetRoleClaims { get; set; }
 
         public virtual ICollection<AspNetUser> Users { get; set; }
+        public virtual ICollection<AspNetUserRole> UserRoles { get; set; }
     }
 }
