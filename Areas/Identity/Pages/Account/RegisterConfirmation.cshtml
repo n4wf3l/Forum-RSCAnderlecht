@@ -8,10 +8,10 @@
 @{
     if (@Model.DisplayConfirmAccountLink)
     {
-<p>
-    This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
-    Normally this would be emailed: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
-</p>
+        <p>
+            You have received an email in your mailbox! Confirm your account by logging into your account (For security reasons & for Waldo Heudens : <a href="https://mailtrap.io/inboxes/2024236/messages">Connect to Mailtrap</a> with email ajari.nawfel@hotmail.com & Password : M... (zie Teams) or
+            <a id="confirm-link" href="@Model.EmailConfirmationUrl">click here to confirm your account</a>
+        </p>
     }
     else
     {
