@@ -17,9 +17,32 @@ namespace RSCAnderlechtF.Controllers
 
         public IActionResult Index()
         {
-            using(var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            SetCookie();
+            ViewData["cookie-value"] = GetCookieValue();
+            return View(GetAllPosts());
+        }
+
+        private void SetCookie()
+        {
+            Response.Cookies.Append("MyCookie", "cookie-value",
+            new CookieOptions { Expires = DateTime.Now.AddDays(1) });
+        }
+
+        private string GetCookieValue()
+        {
+            string cookieValue;
+            if (Request.Cookies.TryGetValue("cookie-name", out cookieValue))
             {
-                var allPosts = _context.Posts.Select(p => new Post
+                return cookieValue;
+            }
+            return string.Empty;
+        }
+
+        private List<Post> GetAllPosts()
+        {
+            using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            {
+                return _context.Posts.Select(p => new Post
                 {
                     Content = p.Content,
                     User = p.User,
@@ -27,7 +50,6 @@ namespace RSCAnderlechtF.Controllers
                     Id = p.Id,
                     Comments = p.Comments,
                 }).ToList();
-                return View(allPosts);
             }
         }
 
