@@ -1,11 +1,44 @@
 ﻿@page
+@using RSCAnderlechtF.Models;
 @model ResendEmailConfirmationModel
+@inject LanguageService language
 @{
-    ViewData["Title"] = "Resend email confirmation";
+    ViewData["Title"] = @language.Getkey("resend email confirmation");
 }
 
+<style>
+    body {
+        background-color: #4C2484;
+    }
+
+    h2, h2, p {
+        color: white;
+    }
+
+    label {
+        color: #4C2484;
+    }
+
+    .custom-button {
+        background-color: white;
+        color: #4C2484;
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+    }
+
+    a {
+        color: white;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+</style>
+
 <h1>@ViewData["Title"]</h1>
-<h2>Enter your email.</h2>
+<h2>@language.Getkey("Enter your email")</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +49,7 @@
                 <label asp-for="Input.Email" class="form-label"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Resend</button>
+            <button type="submit" class="custom-button">@language.Getkey("resend email confirmation")</button>
         </form>
     </div>
 </div>

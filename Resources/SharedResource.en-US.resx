@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="at" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="be" xml:space="preserve">
+    <value>BE</value>
+  </data>
+  <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
+    <value>Become a member of the RSC Anderlecht forum and keep up to date with all the news!</value>
+  </data>
+  <data name="create a new account" xml:space="preserve">
+    <value>Create a new account</value>
+  </data>
+  <data name="Enter your email" xml:space="preserve">
+    <value>Enter you email.</value>
+  </data>
   <data name="forgot your password?" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
@@ -144,8 +159,17 @@
   <data name="news feed" xml:space="preserve">
     <value>News Feed</value>
   </data>
+  <data name="No publication has yet been issued." xml:space="preserve">
+    <value>No publication has yet been issued.</value>
+  </data>
+  <data name="posted by" xml:space="preserve">
+    <value>Posted by</value>
+  </data>
   <data name="privacy" xml:space="preserve">
     <value>Privacy</value>
+  </data>
+  <data name="Recent posts" xml:space="preserve">
+    <value>Recent posts</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Register</value>
@@ -155,6 +179,21 @@
   </data>
   <data name="resend email confirmation" xml:space="preserve">
     <value>Resend email confirmation</value>
+  </data>
+  <data name="Reset password" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="Role Management" xml:space="preserve">
+    <value>Role Management</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
+    <value>The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a 'membership' on the official website.</value>
+  </data>
+  <data name="User Management" xml:space="preserve">
+    <value>User Management</value>
   </data>
   <data name="we are happy to have you back!" xml:space="preserve">
     <value>We are happy to have you back!</value>

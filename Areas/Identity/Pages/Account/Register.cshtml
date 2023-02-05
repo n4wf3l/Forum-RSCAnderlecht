@@ -1,64 +1,69 @@
 ﻿@page
+@using RSCAnderlechtF.Models;
 @model RegisterModel
+@inject LanguageService language
+
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = @language.Getkey("register");
 }
 
-<h1>@ViewData["Title"]</h1>
+<style>
+     body {
+        background-color: #4C2484;
+    }
 
-<div class="row">
+    h2, h2, p {
+        color:white;
+    }
+
+   label{
+        color: #4C2484;
+    }
+
+    button#registerSubmit {
+        background-color: white;
+        color: #4C2484;
+    }
+
+    a {
+        color: white;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>@language.Getkey("create a new account")</h1>
+<div class="d-flex align-items-center">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+            <h2>@language.Getkey("become a member of the rsc anderlecht forum and keep up to date with all the news!")</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating">
+                <label>Email</label>
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.Email"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating">
+                <label>Mot de passe</label>
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating">
+                <label>Confirmer le mot de passe</label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">@language.Getkey("register")</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
+    <div class="mx-3"></div>
+    <div class="col-md-4 text-center">
+        <p class="mb-3">@language.Getkey("The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website.")</p>
+        <p><strong>@language.Getkey("be") <a href="https://www.rsca.be/fr/memberships">MEMBERSHIP</a></strong> !</p>
+        <img src="/anderlecht1.gif" alt="GIF">
     </div>
 </div>
 

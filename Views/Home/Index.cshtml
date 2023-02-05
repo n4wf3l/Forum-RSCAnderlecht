@@ -4,33 +4,64 @@
 }
 @inject LanguageService language
 
+<style>
+    .posts-container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+    body {
+        background-color: #4C2484;
+    }
+
+    label, p, h2 {
+        color: #4C2484;
+    }
+
+    button#registerSubmit {
+        background-color: white;
+        color: #4C2484;
+    }
+
+    a {
+        color: white;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+
+</style>
 
 <div class="text-center">
-    <h1 class="display-4">@language.Getkey("welcome")</h1>
-    <b>Your Recent News Feed</a>.</b> 
+    <h1 class="display-4">RSC Anderlecht Forum</h1>
+    <b>@language.Getkey("Recent posts")</a>.</b>
 </div><br /><br />
 
 <form method="post" action="postmanagement/SearchPost">
-    <div>
-        <input class="form-control" name="keyword" placeholder="Search..." /> 
-        <button type="submit" class="btn btn-primary btn-xs">Go!</button>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control form-control-sm" style="width: 50px" name="keyword" placeholder=@language.Getkey("Search") />
+        <div class="input-group-append">
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Go!</button>
+        </div>
     </div>
-
 </form>
 
 
 @if (Model.Any())
 {
+    <div class="posts-container d-flex flex-column align-items-center">
     @foreach (Post p in Model)
     {
         <div class="card shadow" style="width: 38rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">
-                    Posted By
+                    @language.Getkey("posted by")
                 </h6>
                 <h5 class="card-title">@p.User.NormalizedUserName</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    Posted At: @p.CreateAt
+                    @language.Getkey("at"): @p.CreateAt
                 </h6> <hr>
                 <p class="card-text">@p.Content</p>
                 <a href="#" class="card-link">
@@ -41,16 +72,16 @@
                     <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
                     @p.Comments.Count
                 </a>
-                <a class="card-link">
-                    <img width="30px" height="30px" src="https://toppng.com/uploads/preview/share-png-file-share-icon-free-download-1156313309811bbndeiii.png" />
-                    2
-                </a>
             </div>
         </div>
         <br />
+
     }
+    </div>
 }else{
-    <p>No Posts for You Yet...</p>
+    <p>@language.Getkey("No publication has yet been issued.")</p>
+
+  
 }
 
 
