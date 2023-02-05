@@ -1,10 +1,33 @@
 ﻿@model IEnumerable<Post>
+@inject LanguageService language
 @{
 }
 
+<style>
+
+    body {
+        background-color: #4C2484;
+    }
+
+    label, p, h2, h5 {
+        color: white;
+    }
+
+    button {
+        background-color: white;
+        color: #4C2484;
+    }
+
+    a {
+        color: white;
+    }
+
+
+</style>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <b>+</b> Create New Post
+    <b>+</b> @language.Getkey("Create new post")
 </button>
 
 <!-- Modal -->
@@ -13,15 +36,15 @@
         <form method="post" action="createpost">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">@language.Getkey("Create new post")</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body"> 
-                <textarea class="form-control" name="Content" placeholder="type content"></textarea>
+            <div class="modal-body">
+                    <textarea class="form-control" name="Content" placeholder=@language.Getkey("Type content")></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Update Post</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@language.Getkey("Close")</button>
+                    <button type="submit" class="btn btn-primary">@language.Getkey("Create new post")</button>
             </div>
         </div>
         </form>
@@ -32,10 +55,10 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Content</th>
-            <th scope="col">Comments</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Action</th>
+            <th scope="col">@language.Getkey("Content")</th>
+            <th scope="col">@language.Getkey("Comments")</th>
+            <th scope="col">@language.Getkey("Created At")</th>
+            <th scope="col">@language.Getkey("Action")</th>
         </tr>
     </thead>
     <tbody>

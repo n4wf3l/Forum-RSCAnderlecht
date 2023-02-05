@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
   <data name="at" xml:space="preserve">
     <value>on</value>
   </data>
@@ -126,8 +129,32 @@
   <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
     <value>Become a member of the RSC Anderlecht forum and keep up to date with all the news!</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
   <data name="create a new account" xml:space="preserve">
     <value>Create a new account</value>
+  </data>
+  <data name="Create new post" xml:space="preserve">
+    <value>Create new post</value>
+  </data>
+  <data name="Create new user" xml:space="preserve">
+    <value>Create new user</value>
+  </data>
+  <data name="Create role" xml:space="preserve">
+    <value>Create role</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Created At</value>
   </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Enter you email.</value>
@@ -189,8 +216,14 @@
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="Select role" xml:space="preserve">
+    <value>Select role</value>
+  </data>
   <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
     <value>The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a 'membership' on the official website.</value>
+  </data>
+  <data name="Type content" xml:space="preserve">
+    <value>Type content</value>
   </data>
   <data name="User Management" xml:space="preserve">
     <value>User Management</value>

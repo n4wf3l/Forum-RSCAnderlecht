@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<AspNetUser>
+@inject LanguageService language
 @{
 }
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <b>+</b> Create New User
+    <b>+</b> @language.Getkey("Create new user")
 </button>
 
 <!-- Modal -->
@@ -13,7 +14,7 @@
         <form method="post" action="usermanagement/createUser">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">@language.Getkey("Create new user")</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -25,7 +26,7 @@
                     </div><br />
                     <div>
                         <select name="ConcurrencyStamp" class="form-control">
-                            <option selected disabled>Select Role</option>
+                            <option selected disabled>@language.Getkey("Select role")</option>
                             <option value="68bdf9cb-4866-444d-8cf5-56d54170dc81">Admin</option>
                             <option value="544ac087-b472-4914-8104-a55bd381d0e9">User</option>
                         </select>

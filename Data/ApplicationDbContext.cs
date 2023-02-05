@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RSCAnderlechtF.Models;
+using System.Reflection.Emit;
 
 namespace RSCAnderlechtF.Data
 {
@@ -10,10 +12,12 @@ namespace RSCAnderlechtF.Data
             : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             seedData(builder);
+            //modelBuilder.Entity<AspNetUserLogin>().HasNoKey();
         }
 
         private void seedData(ModelBuilder builder)
@@ -63,6 +67,15 @@ namespace RSCAnderlechtF.Data
                 new IdentityUserRole<string>() { RoleId = "68bdf9cb-4866-444d-8cf5-56d54170dc81", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" }
                 ) ;
             #endregion
+
+          //  #region Posts
+           // builder.Entity<Post>().HasData(
+             //   new Post() { Id = 10, Content = "This is my first post", UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", CreateAt = new DateTime(2022, 12, 01, 12, 00, 00) },
+               // new Post() { Id = 11, Content = "This is my second post", UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", CreateAt = new DateTime(2022, 12, 02, 12, 00, 00) },
+                //new Post() { Id = 12, Content = "This is my third post", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", CreateAt = new DateTime(2022, 12, 03, 12, 00, 00) },
+                //new Post() { Id = 13, Content = "This is my fourth post", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", CreateAt = new DateTime(2022, 12, 04, 12, 00, 00) }
+                //);
+            //#endregion
         }
     }
 }

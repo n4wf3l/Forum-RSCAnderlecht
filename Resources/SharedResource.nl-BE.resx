@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Actie</value>
+  </data>
   <data name="at" xml:space="preserve">
     <value>op</value>
   </data>
@@ -126,8 +129,32 @@
   <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
     <value>Word lid van het RSC Anderlecht forum en blijf op de hoogte van al het nieuws!</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Reacties</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Aanmaken</value>
+  </data>
   <data name="create a new account" xml:space="preserve">
     <value>Schrijf je in!</value>
+  </data>
+  <data name="Create new post" xml:space="preserve">
+    <value>Topic plaatsen</value>
+  </data>
+  <data name="Create new user" xml:space="preserve">
+    <value>Nieuwe user aanmaken</value>
+  </data>
+  <data name="Create role" xml:space="preserve">
+    <value>Creëer rol</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Gepost op</value>
   </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Noteer hieronder uw e-mail.</value>
@@ -189,8 +216,14 @@
   <data name="Search" xml:space="preserve">
     <value>Zoeken</value>
   </data>
+  <data name="Select role" xml:space="preserve">
+    <value>Selecteer een rol</value>
+  </data>
   <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
     <value>Het RSC Anderlecht forum werd opgericht om fans van de club samen te brengen. Blijf op de hoogte van de laatste geruchten, maar ook van de locatie van rally's en de planning van tifo's. Word ook 'Membership' op de officiële website.</value>
+  </data>
+  <data name="Type content" xml:space="preserve">
+    <value>Inhoud</value>
   </data>
   <data name="User Management" xml:space="preserve">
     <value>Gebruikersbeheer</value>

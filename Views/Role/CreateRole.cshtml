@@ -1,6 +1,7 @@
 ﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+@inject LanguageService language
 @{
-    ViewData["Title"] = "Create Role";
+    ViewData["Title"] = @language.Getkey("Create role");
 
 
 
@@ -15,7 +16,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <h4>Create a new role.</h4>
+            <h4>@language.Getkey("Create role")</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -23,7 +24,7 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">@language.Getkey("Create")</button>
         </form>
     </div>
 </div>
