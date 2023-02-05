@@ -2,11 +2,11 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+@inject LanguageService language
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome.!!</h1>
+    <h1 class="display-4">@language.Getkey("welcome")</h1>
     <b>Your Recent News Feed</a>.</b> 
 </div><br /><br />
 

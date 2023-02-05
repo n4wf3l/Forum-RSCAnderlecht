@@ -21,7 +21,6 @@ namespace RSCAnderlechtF.Controllers
             return View();
         }
 
-
         [HttpPost]
         [AllowAnonymous]
         public IActionResult CreatePost(Post post)
