@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Access denied" xml:space="preserve">
+    <value>Accès refusé</value>
+  </data>
+  <data name="Account information such as username and password" xml:space="preserve">
+    <value>Accountinformatie zoals gebruikersnaam en wachtwoord</value>
+  </data>
   <data name="Action" xml:space="preserve">
     <value>Action</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>Une erreur s'est produite lors du traitement de votre demande.</value>
   </data>
   <data name="at" xml:space="preserve">
     <value>le</value>
@@ -129,11 +138,44 @@
   <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
     <value>Devenez membre du forum du RSC Anderlecht et soyez à l'affût de tous les informations !</value>
   </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Changer d'email</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Changer le mot de passe</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Modifier les paramètres de votre compte</value>
+  </data>
+  <data name="Check your mailbox, an email has been sent to you to confirm your account" xml:space="preserve">
+    <value>Vérifiez votre mailbox, un email vous a été envoyé pour confirmer votre compte</value>
+  </data>
+  <data name="Click here to confirm directly your account" xml:space="preserve">
+    <value>Cliquez ici pour confirmer directement votre compte</value>
+  </data>
+  <data name="Click here to log in" xml:space="preserve">
+    <value>Cliquez ici pour vous connecter</value>
+  </data>
+  <data name="Click here to Logout" xml:space="preserve">
+    <value>Cliquez ici pour vous déconnecter</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commenter</value>
+  </data>
   <data name="Comments" xml:space="preserve">
     <value>Commentaires</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Confirmez votre email</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Confirmez le changement de votre email</value>
+  </data>
+  <data name="Contact information such as name, email address and telephone number" xml:space="preserve">
+    <value>Informations de contact telles que le nom, l'adresse électronique et le numéro de téléphone.</value>
   </data>
   <data name="Content" xml:space="preserve">
     <value>Publication</value>
@@ -156,8 +198,41 @@
   <data name="Created At" xml:space="preserve">
     <value>Date de publication</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Delete data and close my account." xml:space="preserve">
+    <value>Supprimer les données et fermer mon compte.</value>
+  </data>
+  <data name="Delete personal data" xml:space="preserve">
+    <value>Supprimer les informations personnelles</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve">
+    <value>La suppression de ces données entraîne la suppression définitive de votre compte, qui ne peut être récupéré.</value>
+  </data>
+  <data name="Demographic information such as age, gender and city of residence" xml:space="preserve">
+    <value>Informations démographiques telles que l'âge, le sexe et la ville de résidence</value>
+  </data>
+  <data name="Development Mode" xml:space="preserve">
+    <value>Mode de développement</value>
+  </data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve">
+    <value>Vous n'avez pas accès à votre dispositif d'authentification ? Vous pouvez</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Notez ci-dessous votre adresse email.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="External logins" xml:space="preserve">
+    <value>Connexion externe</value>
+  </data>
+  <data name="Forgot password confirmation" xml:space="preserve">
+    <value>Confirmation du mot de passe oublié</value>
   </data>
   <data name="forgot your password?" xml:space="preserve">
     <value>Mot de passe oublié?</value>
@@ -168,11 +243,23 @@
   <data name="home" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="Information Collected" xml:space="preserve">
+    <value>Informations collectées</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Langue</value>
   </data>
+  <data name="List of roles" xml:space="preserve">
+    <value>Liste des rôles</value>
+  </data>
+  <data name="Locked out" xml:space="preserve">
+    <value>Verrouillé</value>
+  </data>
   <data name="log in" xml:space="preserve">
     <value>Connectez vous</value>
+  </data>
+  <data name="log in with a recovery code" xml:space="preserve">
+    <value>vous connecter avec un code de récupération</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Connexion</value>
@@ -180,8 +267,20 @@
   <data name="logout" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
+  <data name="Manage email" xml:space="preserve">
+    <value>Gérer mon email</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Gérer votre compte</value>
+  </data>
   <data name="my posts" xml:space="preserve">
     <value>Mes publications</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="New password" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
   </data>
   <data name="news feed" xml:space="preserve">
     <value>Forum</value>
@@ -189,11 +288,29 @@
   <data name="No publication has yet been issued." xml:space="preserve">
     <value>Aucune publication n'a encore été publiée.</value>
   </data>
+  <data name="Our website uses cookies to enhance the user experience and gather information about site usage. A cookie is a small text file that is stored on the user's device by the web browser. The information gathered through cookies may include the pages visited, the time spent on the site and the advertisements clicked. This information is used to improve our website and services. Users can choose to disable cookies in their web browser, but this may limit their ability to use certain features on our site. We use the information collected from our users for the following purposes:" xml:space="preserve">
+    <value>Notre site web utilise des cookies pour améliorer l'expérience utilisateur et recueillir des informations sur l'utilisation du site. Un cookie est un petit fichier texte qui est stocké sur l'appareil de l'utilisateur par le navigateur web. Les informations recueillies par les cookies peuvent inclure les pages visitées, le temps passé sur le site et les publicités cliquées. Ces informations sont utilisées pour améliorer notre site web et nos services. Les utilisateurs peuvent choisir de désactiver les cookies dans leur navigateur web, mais cela peut limiter leur capacité à utiliser certaines fonctionnalités de notre site. Nous utilisons les informations recueillies auprès de nos utilisateurs aux fins suivantes :</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Informations personnelles</value>
+  </data>
+  <data name="Please check your email to confirm your account" xml:space="preserve">
+    <value>Veuillez vérifier votre e-mail pour confirmer votre compte</value>
+  </data>
+  <data name="Please check your email to reset your password." xml:space="preserve">
+    <value>Vérifiez votre email pour réinitialiser votre mot de passe.</value>
+  </data>
   <data name="posted by" xml:space="preserve">
     <value>Publié par</value>
   </data>
   <data name="privacy" xml:space="preserve">
     <value>Confidentialité</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
   </data>
   <data name="Recent posts" xml:space="preserve">
     <value>Publications récentes</value>
@@ -201,37 +318,132 @@
   <data name="register" xml:space="preserve">
     <value>S'inscrire</value>
   </data>
+  <data name="Register confirmation" xml:space="preserve">
+    <value>Confirmation de votre inscription</value>
+  </data>
   <data name="remember me?" xml:space="preserve">
     <value>Se souvenir de moi</value>
   </data>
   <data name="resend email confirmation" xml:space="preserve">
     <value>Réenvoyez un email de confirmation</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Réinitialisez</value>
+  </data>
   <data name="Reset password" xml:space="preserve">
     <value>Réinitialiser le mot de passe</value>
+  </data>
+  <data name="Reset password confirmation" xml:space="preserve">
+    <value>Confirmation de la réinitialisation du mot de passe</value>
+  </data>
+  <data name="Reset your password" xml:space="preserve">
+    <value>Réinitialisez votre mot de passe</value>
+  </data>
+  <data name="Result found" xml:space="preserve">
+    <value>Résultat</value>
   </data>
   <data name="Role Management" xml:space="preserve">
     <value>Gestion des rôles</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Rechercher</value>
+  </data>
+  <data name="Search result" xml:space="preserve">
+    <value>Résultat de recherche</value>
   </data>
   <data name="Select role" xml:space="preserve">
     <value>Sélectionne un rôle</value>
   </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Envoyer un email de confirmation</value>
+  </data>
+  <data name="Sharing of Information" xml:space="preserve">
+    <value>Partage d'informations</value>
+  </data>
+  <data name="Swapping to Development environment will display more detailed information about the error that occurred." xml:space="preserve">
+    <value>En passant à l'environnement de développement, vous obtiendrez des informations plus détaillées sur l'erreur qui s'est produite.</value>
+  </data>
+  <data name="The Development environment shouldn't be enabled for deployed applications.&#xA; It can result in displaying sensitive information from exceptions to end users.&#xA; For local debugging, enable the Development environment by setting the ASPNETCORE_ENVIRONMENT environment variable to Development and restarting the app." xml:space="preserve">
+    <value>L'environnement de développement ne devrait pas être activé pour les applications déployées.
+ Il peut entraîner l'affichage d'informations sensibles des exceptions aux utilisateurs finaux.
+ Pour le débogage local, activez l'environnement de développement en définissant la variable d'environnement ASPNETCORE_ENVIRONMENT sur Développement et en redémarrant l'application.</value>
+  </data>
   <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
     <value>Le forum du RSC Anderlecht a été crée pour rassembler les fans du club. Soyez à jour sur les plus récentes rumeurs, mais également sur les lieu de rassemblements et la planification de tifos. Devenez également 'Membership' sur le site officiel.</value>
+  </data>
+  <data name="There are currently no comments" xml:space="preserve">
+    <value>Il n'y a actuellement aucun commentaire.</value>
+  </data>
+  <data name="This account has been locked out, please try again later" xml:space="preserve">
+    <value>Ce compte a été verrouillé, veuillez réessayer plus tard.</value>
+  </data>
+  <data name="To improve our website and services" xml:space="preserve">
+    <value>Améliorer notre site web et nos services</value>
+  </data>
+  <data name="To personalize the user experience" xml:space="preserve">
+    <value>Pour personnaliser l'expérience de l'utilisateur</value>
+  </data>
+  <data name="To provide services and features to our users" xml:space="preserve">
+    <value>Pour fournir des services et des fonctionnalités à nos utilisateurs</value>
+  </data>
+  <data name="To send promotional and informational communications to our users" xml:space="preserve">
+    <value>Pour envoyer des communications promotionnelles et informatives à nos utilisateurs</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Authentification à deux facteurs</value>
   </data>
   <data name="Type content" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="Use of Information" xml:space="preserve">
+    <value>Utilisation des informations</value>
+  </data>
   <data name="User Management" xml:space="preserve">
     <value>Gestion des utilisateurs</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
   </data>
   <data name="we are happy to have you back!" xml:space="preserve">
     <value>Nous sommes heureux de vous retrouver!</value>
   </data>
+  <data name="We do not share the information of our users with third parties, except in the following cases:" xml:space="preserve">
+    <value>Nous ne partageons pas les informations de nos utilisateurs avec des tiers, sauf dans les cas suivants :</value>
+  </data>
+  <data name="We may collect the following information from our users:" xml:space="preserve">
+    <value>Nous pouvons recueillir les informations suivantes auprès de nos utilisateurs :</value>
+  </data>
+  <data name="We take the privacy of our users very seriously. This privacy policy outlines the types of information we collect from our users and how we use it." xml:space="preserve">
+    <value>Nous prenons très au sérieux le respect de la vie privée de nos utilisateurs. La présente politique de confidentialité décrit les types d'informations que nous recueillons auprès de nos utilisateurs et la manière dont nous les utilisons.</value>
+  </data>
   <data name="welcome" xml:space="preserve">
     <value>Bienvenue</value>
+  </data>
+  <data name="When required by law" xml:space="preserve">
+    <value>Lorsque la loi l'exige</value>
+  </data>
+  <data name="When we believe in good faith that disclosure is necessary to protect our rights and those of our users" xml:space="preserve">
+    <value>Lorsque nous pensons de bonne foi que la divulgation est nécessaire pour protéger nos droits et ceux de nos utilisateurs.</value>
+  </data>
+  <data name="You do not have access to this resource." xml:space="preserve">
+    <value>Vous n'avez pas d'accès à cette page.</value>
+  </data>
+  <data name="You have successfully logged out of the application." xml:space="preserve">
+    <value>Vous avez bien été déconnecté de votre compte.</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data." xml:space="preserve">
+    <value>Votre compte contient des données personnelles que vous nous avez communiquées. Cette page vous permet de télécharger ou de supprimer ces données.</value>
+  </data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below." xml:space="preserve">
+    <value>Votre connexion est protégée par une application d'authentification. Entrez votre code d'authentification ci-dessous.</value>
+  </data>
+  <data name="Your password has been reset." xml:space="preserve">
+    <value>Votre mot de passe a été réinitialisé.</value>
   </data>
 </root>

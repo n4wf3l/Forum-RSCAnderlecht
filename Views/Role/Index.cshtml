@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+@inject LanguageService language
 
 
 
-<h1>List of Roles</h1>
-<a asp-action="CreateRole">Create</a>
+<h1>@language.Getkey("List of roles")</h1>
+<a asp-action="CreateRole">@language.Getkey("Create")</a>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
             <td>Id</td>
-            <td>Name</td>
+            <td>@language.Getkey("Name")</td>
         </tr>
     </thead>
 </table>

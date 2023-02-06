@@ -21,6 +21,26 @@
 
 </head>
 <body>
+    <style>
+.navbar-nav .nav-link {
+  color: white;
+}
+
+nav a:hover {
+  color: white;
+}
+#nav a:hover {
+  color: white;
+}
+
+
+.navbar-nav .nav-link:hover {
+  background-color: #4C2484;
+  color: white;
+  border-radius:20px;
+}
+    </style>
+
     <header>
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
   <div class="container-fluid">
@@ -28,30 +48,37 @@
               <img src="/RSC_Anderlecht_logo.png" alt="Logo" width="50px">
               RSCA Forum
           </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-      <ul class="navbar-nav flex-grow-1">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+
         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@language.Getkey("news feed")</a>
         </li>
+    
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin") || SignInManager.IsSignedIn(User) && User.IsInRole("User")){
         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="PostManagement" asp-action="MyPosts">@language.Getkey("my posts")</a>
-        </li
-                <li class="nav-item">
+                                
+        </li>
+                        }
+         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@language.Getkey("privacy")</a>
         </li>
+
         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
         {
-          <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="UserManagement" asp-action="Index">@language.Getkey("User Management")</a>
+         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UserManagement" asp-action="Index">@language.Getkey("User Management")</a>
           </li>
         }
-        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+
+       @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
         { 
           <li class="nav-item"> 
-            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">@language.Getkey("Role Management")</a> 
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">@language.Getkey("Role Management")</a> 
            </li> 
         }
       </ul>
@@ -74,9 +101,7 @@
       <partial name="_LoginPartial" />
     </div>
   </div>
-  
- 
-        </nav>
+ </nav>
 
     </header>
     <div class="container">

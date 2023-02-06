@@ -1,7 +1,10 @@
 ﻿@page
 @model ConfirmEmailChangeModel
+
+@using RSCAnderlechtF.Models;
+@inject LanguageService language
 @{
-    ViewData["Title"] = "Confirm email change";
+    ViewData["Title"] = @language.Getkey("Confirm email change");
 }
 
 <h1>@ViewData["Title"]</h1>

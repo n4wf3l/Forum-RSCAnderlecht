@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Access denied" xml:space="preserve">
+    <value>Toegang geweigerd</value>
+  </data>
+  <data name="Account information such as username and password" xml:space="preserve">
+    <value>Accountinformatie zoals gebruikersnaam en wachtwoord</value>
+  </data>
   <data name="Action" xml:space="preserve">
     <value>Actie</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>Er is een fout opgetreden tijdens de verwerking van uw verzoek.</value>
   </data>
   <data name="at" xml:space="preserve">
     <value>op</value>
@@ -129,11 +138,44 @@
   <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
     <value>Word lid van het RSC Anderlecht forum en blijf op de hoogte van al het nieuws!</value>
   </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Verander e-mail</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Verander wachtwoord</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Uw accountinstellingen wijzigen</value>
+  </data>
+  <data name="Check your mailbox, an email has been sent to you to confirm your account" xml:space="preserve">
+    <value>Controleer uw mailbox, er is een e-mail verzonden om uw account te bevestigen</value>
+  </data>
+  <data name="Click here to confirm directly your account" xml:space="preserve">
+    <value>Klik hier om uw account direct te bevestigen</value>
+  </data>
+  <data name="Click here to log in" xml:space="preserve">
+    <value>Druk hier om in te loggen</value>
+  </data>
+  <data name="Click here to Logout" xml:space="preserve">
+    <value>Druk hier om uit te loggen</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Annuleren</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Reageer</value>
+  </data>
   <data name="Comments" xml:space="preserve">
     <value>Reacties</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Bevestig e-mail</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Bevestig uw e-mail verandering</value>
+  </data>
+  <data name="Contact information such as name, email address and telephone number" xml:space="preserve">
+    <value>Contactgegevens zoals naam, e-mailadres en telefoonnummer</value>
   </data>
   <data name="Content" xml:space="preserve">
     <value>Topic</value>
@@ -156,8 +198,41 @@
   <data name="Created At" xml:space="preserve">
     <value>Gepost op</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Delete data and close my account." xml:space="preserve">
+    <value>Verwijder gegevens en sluit mijn account.</value>
+  </data>
+  <data name="Delete personal data" xml:space="preserve">
+    <value>Persoonlijke informatie verwijderen</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve">
+    <value>Het verwijderen van deze gegevens zal uw account permanent verwijderen, en dit kan niet worden hersteld.</value>
+  </data>
+  <data name="Demographic information such as age, gender and city of residence" xml:space="preserve">
+    <value>Demografische informatie zoals leeftijd, geslacht en woonplaats</value>
+  </data>
+  <data name="Development Mode" xml:space="preserve">
+    <value>Ontwikkelingsmodus</value>
+  </data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve">
+    <value>Heeft u geen toegang tot uw authenticatietoestel? U kunt</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Downloaden</value>
+  </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Noteer hieronder uw e-mail.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Foutmelding</value>
+  </data>
+  <data name="External logins" xml:space="preserve">
+    <value>Externe aanmeldingen</value>
+  </data>
+  <data name="Forgot password confirmation" xml:space="preserve">
+    <value>Bevestiging wachtwoord vergeten</value>
   </data>
   <data name="forgot your password?" xml:space="preserve">
     <value>Wachtwoord vergeten?</value>
@@ -168,11 +243,23 @@
   <data name="home" xml:space="preserve">
     <value>Startpagina</value>
   </data>
+  <data name="Information Collected" xml:space="preserve">
+    <value>Verzamelde informatie</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Taal</value>
   </data>
+  <data name="List of roles" xml:space="preserve">
+    <value>Lijst van rollen</value>
+  </data>
+  <data name="Locked out" xml:space="preserve">
+    <value>Buitengesloten</value>
+  </data>
   <data name="log in" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="log in with a recovery code" xml:space="preserve">
+    <value>inloggen met een herstelcode</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Inloggen</value>
@@ -180,8 +267,20 @@
   <data name="logout" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
+  <data name="Manage email" xml:space="preserve">
+    <value>Emailbeheer</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Beheer uw account</value>
+  </data>
   <data name="my posts" xml:space="preserve">
     <value>Mijn Topics</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="New password" xml:space="preserve">
+    <value>Nieuwe wachtwoord</value>
   </data>
   <data name="news feed" xml:space="preserve">
     <value>Forum</value>
@@ -189,11 +288,29 @@
   <data name="No publication has yet been issued." xml:space="preserve">
     <value>Er is nog geen topic geplaatst</value>
   </data>
+  <data name="Our website uses cookies to enhance the user experience and gather information about site usage. A cookie is a small text file that is stored on the user's device by the web browser. The information gathered through cookies may include the pages visited, the time spent on the site and the advertisements clicked. This information is used to improve our website and services. Users can choose to disable cookies in their web browser, but this may limit their ability to use certain features on our site. We use the information collected from our users for the following purposes:" xml:space="preserve">
+    <value>Onze website gebruikt cookies om de gebruikerservaring te verbeteren en informatie te verzamelen over het gebruik van de site. Een cookie is een klein tekstbestand dat door de webbrowser op het apparaat van de gebruiker wordt opgeslagen. De informatie die via cookies wordt verzameld, kan bestaan uit de bezochte pagina's, de tijd die op de site wordt doorgebracht en de advertenties waarop wordt geklikt. Deze informatie wordt gebruikt om onze website en diensten te verbeteren. Gebruikers kunnen ervoor kiezen om cookies in hun webbrowser uit te schakelen, maar dit kan hun vermogen om bepaalde functies op onze site te gebruiken beperken. Wij gebruiken de verzamelde informatie van onze gebruikers voor de volgende doeleinden:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Persoonlijke informatie</value>
+  </data>
+  <data name="Please check your email to confirm your account" xml:space="preserve">
+    <value>Controleer uw e-mail om uw account te bevestigen</value>
+  </data>
+  <data name="Please check your email to reset your password." xml:space="preserve">
+    <value>Controleer uw e-mail om uw wachtwoord opnieuw in te stellen.</value>
+  </data>
   <data name="posted by" xml:space="preserve">
     <value>Geplaatst door</value>
   </data>
   <data name="privacy" xml:space="preserve">
     <value>Privacy</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profiel</value>
   </data>
   <data name="Recent posts" xml:space="preserve">
     <value>Recente topics</value>
@@ -201,37 +318,132 @@
   <data name="register" xml:space="preserve">
     <value>Inschrijving</value>
   </data>
+  <data name="Register confirmation" xml:space="preserve">
+    <value>Registratiebevestiging</value>
+  </data>
   <data name="remember me?" xml:space="preserve">
     <value>Mij herinneren</value>
   </data>
   <data name="resend email confirmation" xml:space="preserve">
     <value>Email bevestiging opnieuw versturen</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Resetten</value>
+  </data>
   <data name="Reset password" xml:space="preserve">
     <value>Wachtwoord resetten</value>
+  </data>
+  <data name="Reset password confirmation" xml:space="preserve">
+    <value>Bevestiging wachtwoord opnieuw instellen</value>
+  </data>
+  <data name="Reset your password" xml:space="preserve">
+    <value>Wachtwoord opnieuw instellen</value>
+  </data>
+  <data name="Result found" xml:space="preserve">
+    <value>Resultaat</value>
   </data>
   <data name="Role Management" xml:space="preserve">
     <value>Rolbeheer</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Zoeken</value>
+  </data>
+  <data name="Search result" xml:space="preserve">
+    <value>Zoekresultaat</value>
   </data>
   <data name="Select role" xml:space="preserve">
     <value>Selecteer een rol</value>
   </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Stuur verificatie e-mail</value>
+  </data>
+  <data name="Sharing of Information" xml:space="preserve">
+    <value>Delen van informatie</value>
+  </data>
+  <data name="Swapping to Development environment will display more detailed information about the error that occurred." xml:space="preserve">
+    <value>Als u naar de ontwikkelomgeving gaat, krijgt u meer gedetailleerde informatie over de opgetreden fout.</value>
+  </data>
+  <data name="The Development environment shouldn't be enabled for deployed applications.&#xA; It can result in displaying sensitive information from exceptions to end users.&#xA; For local debugging, enable the Development environment by setting the ASPNETCORE_ENVIRONMENT environment variable to Development and restarting the app." xml:space="preserve">
+    <value>De ontwikkelomgeving moet niet worden ingeschakeld voor uitgerolde toepassingen.
+ Het kan leiden tot het tonen van gevoelige informatie van uitzonderingen aan eindgebruikers.
+ Voor lokaal debuggen schakelt u de ontwikkelomgeving in door de omgevingsvariabele ASPNETCORE_ENVIRONMENT in te stellen op Development en de app opnieuw te starten.</value>
+  </data>
   <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
     <value>Het RSC Anderlecht forum werd opgericht om fans van de club samen te brengen. Blijf op de hoogte van de laatste geruchten, maar ook van de locatie van rally's en de planning van tifo's. Word ook 'Membership' op de officiële website.</value>
+  </data>
+  <data name="There are currently no comments" xml:space="preserve">
+    <value>Er zijn momenteel geen reacties.</value>
+  </data>
+  <data name="This account has been locked out, please try again later" xml:space="preserve">
+    <value>Deze account is geblokkeerd, probeer het later opnieuw.</value>
+  </data>
+  <data name="To improve our website and services" xml:space="preserve">
+    <value>Om onze website en diensten te verbeteren</value>
+  </data>
+  <data name="To personalize the user experience" xml:space="preserve">
+    <value>De gebruikerservaring personaliseren</value>
+  </data>
+  <data name="To provide services and features to our users" xml:space="preserve">
+    <value>Om diensten en functies aan onze gebruikers aan te bieden</value>
+  </data>
+  <data name="To send promotional and informational communications to our users" xml:space="preserve">
+    <value>Om promotionele en informatieve berichten naar onze gebruikers te sturen</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Authenticatie met twee factoren</value>
   </data>
   <data name="Type content" xml:space="preserve">
     <value>Inhoud</value>
   </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Update wachtwoord</value>
+  </data>
+  <data name="Use of Information" xml:space="preserve">
+    <value>Gebruik van informatie</value>
+  </data>
   <data name="User Management" xml:space="preserve">
     <value>Gebruikersbeheer</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Gebruikersnaam</value>
   </data>
   <data name="we are happy to have you back!" xml:space="preserve">
     <value>We zijn blij u weer te zien!</value>
   </data>
+  <data name="We do not share the information of our users with third parties, except in the following cases:" xml:space="preserve">
+    <value>Wij delen de informatie van onze gebruikers niet met derden, behalve in de volgende gevallen:</value>
+  </data>
+  <data name="We may collect the following information from our users:" xml:space="preserve">
+    <value>Wij kunnen de volgende informatie van onze gebruikers verzamelen:</value>
+  </data>
+  <data name="We take the privacy of our users very seriously. This privacy policy outlines the types of information we collect from our users and how we use it." xml:space="preserve">
+    <value>Wij nemen de privacy van onze gebruikers zeer serieus. Dit privacybeleid beschrijft de soorten informatie die wij van onze gebruikers verzamelen en hoe wij die gebruiken.</value>
+  </data>
   <data name="welcome" xml:space="preserve">
     <value>Welkom</value>
+  </data>
+  <data name="When required by law" xml:space="preserve">
+    <value>Indien wettelijk vereist</value>
+  </data>
+  <data name="When we believe in good faith that disclosure is necessary to protect our rights and those of our users" xml:space="preserve">
+    <value>Wanneer wij te goeder trouw geloven dat openbaarmaking noodzakelijk is om onze rechten en die van onze gebruikers te beschermen</value>
+  </data>
+  <data name="You do not have access to this resource." xml:space="preserve">
+    <value>U hebt geen toegang tot dit pagina.</value>
+  </data>
+  <data name="You have successfully logged out of the application." xml:space="preserve">
+    <value>U bent successvol uitgelogd van uw account.</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data." xml:space="preserve">
+    <value>Uw account bevat persoonlijke gegevens die u ons heeft gegeven. Op deze pagina kunt u die gegevens downloaden of verwijderen.</value>
+  </data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below." xml:space="preserve">
+    <value>Uw aanmelding is beveiligd met een authenticator-app. Voer hieronder uw authenticator code in.</value>
+  </data>
+  <data name="Your password has been reset." xml:space="preserve">
+    <value>Uw wachtwoord werd hersteld.</value>
   </data>
 </root>

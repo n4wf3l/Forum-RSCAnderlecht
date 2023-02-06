@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Access denied" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="Account information such as username and password" xml:space="preserve">
+    <value>Account information such as username and password</value>
+  </data>
   <data name="Action" xml:space="preserve">
     <value>Action</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
   </data>
   <data name="at" xml:space="preserve">
     <value>on</value>
@@ -129,11 +138,44 @@
   <data name="become a member of the rsc anderlecht forum and keep up to date with all the news!" xml:space="preserve">
     <value>Become a member of the RSC Anderlecht forum and keep up to date with all the news!</value>
   </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Change email</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Change your account settings</value>
+  </data>
+  <data name="Check your mailbox, an email has been sent to you to confirm your account" xml:space="preserve">
+    <value>Check your mailbox, an email has been sent to you to confirm your account</value>
+  </data>
+  <data name="Click here to confirm directly your account" xml:space="preserve">
+    <value>Click here to confirm directly your account</value>
+  </data>
+  <data name="Click here to log in" xml:space="preserve">
+    <value>Click here to log in</value>
+  </data>
+  <data name="Click here to Logout" xml:space="preserve">
+    <value>Click here to Logout</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
   <data name="Comments" xml:space="preserve">
     <value>Comments</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Confirm email</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Confirm email change</value>
+  </data>
+  <data name="Contact information such as name, email address and telephone number" xml:space="preserve">
+    <value>Contact information such as name, email address and telephone number</value>
   </data>
   <data name="Content" xml:space="preserve">
     <value>Content</value>
@@ -156,8 +198,41 @@
   <data name="Created At" xml:space="preserve">
     <value>Created At</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Delete data and close my account." xml:space="preserve">
+    <value>Delete data and close my account.</value>
+  </data>
+  <data name="Delete personal data" xml:space="preserve">
+    <value>Delete personal data</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve">
+    <value>Deleting this data will permanently remove your account, and this cannot be recovered.</value>
+  </data>
+  <data name="Demographic information such as age, gender and city of residence" xml:space="preserve">
+    <value>Demographic information such as age, gender and city of residence</value>
+  </data>
+  <data name="Development Mode" xml:space="preserve">
+    <value>Development Mode</value>
+  </data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve">
+    <value>Don't have access to your authenticator device? You can</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Enter you email.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="External logins" xml:space="preserve">
+    <value>External logins</value>
+  </data>
+  <data name="Forgot password confirmation" xml:space="preserve">
+    <value>Forgot password confirmation</value>
   </data>
   <data name="forgot your password?" xml:space="preserve">
     <value>Forgot your password?</value>
@@ -168,11 +243,26 @@
   <data name="home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Information Collected" xml:space="preserve">
+    <value>Information collected</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="List of roles" xml:space="preserve">
+    <value>List of roles</value>
+  </data>
+  <data name="Locked out" xml:space="preserve">
+    <value>Locked out</value>
+  </data>
   <data name="log in" xml:space="preserve">
     <value>Log In</value>
+  </data>
+  <data name="log in with a recovery code" xml:space="preserve">
+    <value>log in with a recovery code</value>
+  </data>
+  <data name="Log out" xml:space="preserve">
+    <value>Log out</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Login</value>
@@ -180,8 +270,20 @@
   <data name="logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Manage email" xml:space="preserve">
+    <value>Manage email</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Manage your account</value>
+  </data>
   <data name="my posts" xml:space="preserve">
     <value>My Posts</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New password" xml:space="preserve">
+    <value>New password</value>
   </data>
   <data name="news feed" xml:space="preserve">
     <value>News Feed</value>
@@ -189,11 +291,29 @@
   <data name="No publication has yet been issued." xml:space="preserve">
     <value>No publication has yet been issued.</value>
   </data>
+  <data name="Our website uses cookies to enhance the user experience and gather information about site usage. A cookie is a small text file that is stored on the user's device by the web browser. The information gathered through cookies may include the pages visited, the time spent on the site and the advertisements clicked. This information is used to improve our website and services. Users can choose to disable cookies in their web browser, but this may limit their ability to use certain features on our site. We use the information collected from our users for the following purposes:" xml:space="preserve">
+    <value>Our website uses cookies to enhance the user experience and gather information about site usage. A cookie is a small text file that is stored on the user's device by the web browser. The information gathered through cookies may include the pages visited, the time spent on the site and the advertisements clicked. This information is used to improve our website and services. Users can choose to disable cookies in their web browser, but this may limit their ability to use certain features on our site. We use the information collected from our users for the following purposes:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="Please check your email to confirm your account" xml:space="preserve">
+    <value>Please check your email to confirm your account</value>
+  </data>
+  <data name="Please check your email to reset your password." xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
   <data name="posted by" xml:space="preserve">
     <value>Posted by</value>
   </data>
   <data name="privacy" xml:space="preserve">
     <value>Privacy</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
   </data>
   <data name="Recent posts" xml:space="preserve">
     <value>Recent posts</value>
@@ -201,37 +321,132 @@
   <data name="register" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="Register confirmation" xml:space="preserve">
+    <value>Register confirmation</value>
+  </data>
   <data name="remember me?" xml:space="preserve">
     <value>Remember me?</value>
   </data>
   <data name="resend email confirmation" xml:space="preserve">
     <value>Resend email confirmation</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="Reset password" xml:space="preserve">
     <value>Reset password</value>
+  </data>
+  <data name="Reset password confirmation" xml:space="preserve">
+    <value>Reset password confirmation</value>
+  </data>
+  <data name="Reset your password" xml:space="preserve">
+    <value>Reset your password</value>
+  </data>
+  <data name="Result found" xml:space="preserve">
+    <value>Result found</value>
   </data>
   <data name="Role Management" xml:space="preserve">
     <value>Role Management</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="Search result" xml:space="preserve">
+    <value>Search result</value>
   </data>
   <data name="Select role" xml:space="preserve">
     <value>Select role</value>
   </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Send verification email</value>
+  </data>
+  <data name="Sharing of Information" xml:space="preserve">
+    <value>Sharing of information</value>
+  </data>
+  <data name="Swapping to Development environment will display more detailed information about the error that occurred." xml:space="preserve">
+    <value>Swapping to Development environment will display more detailed information about the error that occurred.</value>
+  </data>
+  <data name="The Development environment shouldn't be enabled for deployed applications.&#xA; It can result in displaying sensitive information from exceptions to end users.&#xA; For local debugging, enable the Development environment by setting the ASPNETCORE_ENVIRONMENT environment variable to Development and restarting the app." xml:space="preserve">
+    <value>The Development environment shouldn't be enabled for deployed applications.
+ It can result in displaying sensitive information from exceptions to end users.
+ For local debugging, enable the Development environment by setting the ASPNETCORE_ENVIRONMENT environment variable to Development and restarting the app.</value>
+  </data>
   <data name="The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a member on the official website." xml:space="preserve">
     <value>The RSC Anderlecht forum was created to bring together fans of the club. Keep up to date with the latest rumours, but also with the location of rallies and the planning of tifos. Also become a 'membership' on the official website.</value>
+  </data>
+  <data name="There are currently no comments" xml:space="preserve">
+    <value>There are currently no comments.</value>
+  </data>
+  <data name="This account has been locked out, please try again later" xml:space="preserve">
+    <value>This account has been locked out, please try again later.</value>
+  </data>
+  <data name="To improve our website and services" xml:space="preserve">
+    <value>To improve our website and services</value>
+  </data>
+  <data name="To personalize the user experience" xml:space="preserve">
+    <value>To personalize the user experience</value>
+  </data>
+  <data name="To provide services and features to our users" xml:space="preserve">
+    <value>To provide services and features to our users</value>
+  </data>
+  <data name="To send promotional and informational communications to our users" xml:space="preserve">
+    <value>To send promotional and informational communications to our users</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Two-factor authentication</value>
   </data>
   <data name="Type content" xml:space="preserve">
     <value>Type content</value>
   </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Update password</value>
+  </data>
+  <data name="Use of Information" xml:space="preserve">
+    <value>Use of information</value>
+  </data>
   <data name="User Management" xml:space="preserve">
     <value>User Management</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="we are happy to have you back!" xml:space="preserve">
     <value>We are happy to have you back!</value>
   </data>
+  <data name="We do not share the information of our users with third parties, except in the following cases:" xml:space="preserve">
+    <value>We do not share the information of our users with third parties, except in the following cases:</value>
+  </data>
+  <data name="We may collect the following information from our users:" xml:space="preserve">
+    <value>We may collect the following information from our users:</value>
+  </data>
+  <data name="We take the privacy of our users very seriously. This privacy policy outlines the types of information we collect from our users and how we use it." xml:space="preserve">
+    <value>We take the privacy of our users very seriously. This privacy policy outlines the types of information we collect from our users and how we use it.</value>
+  </data>
   <data name="welcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="When required by law" xml:space="preserve">
+    <value>When required by law</value>
+  </data>
+  <data name="When we believe in good faith that disclosure is necessary to protect our rights and those of our users" xml:space="preserve">
+    <value>When we believe in good faith that disclosure is necessary to protect our rights and those of our users</value>
+  </data>
+  <data name="You do not have access to this resource." xml:space="preserve">
+    <value>You do not have access to this resource.</value>
+  </data>
+  <data name="You have successfully logged out of the application." xml:space="preserve">
+    <value>You have successfully logged out of the application.</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data." xml:space="preserve">
+    <value>Your account contains personal data that you have given us. This page allows you to download or delete that data.</value>
+  </data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below." xml:space="preserve">
+    <value>Your login is protected with an authenticator app. Enter your authenticator code below.</value>
+  </data>
+  <data name="Your password has been reset." xml:space="preserve">
+    <value>Your password has been reset.</value>
   </data>
 </root>

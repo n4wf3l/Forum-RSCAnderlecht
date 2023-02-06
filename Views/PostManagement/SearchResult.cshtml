@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<Post>
+@inject LanguageService language
 @{
 }
 
-<h2>Search Result</h2>
+<h2>@language.Getkey("Search result")</h2>
 
-<p>Result Found @Model.Count()</p>
+<p>@language.Getkey("Result found") @Model.Count()</p>
 
 @if(Model.Any()){
 
@@ -13,11 +14,11 @@
         <div class="card shadow" style="width: 38rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">
-                    Posted By
+                    @language.Getkey("posted by")
                 </h6>
                 <h5 class="card-title">@p.User.NormalizedUserName</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    Posted At: @p.CreateAt
+                    @language.Getkey("at") : @p.CreateAt
                 </h6> <hr>
                 <p class="card-text">@p.Content</p>
                 <a href="#" class="card-link">
@@ -27,10 +28,6 @@
                 <a asp-route-postId="@p.Id" asp-controller="PostManagement" asp-action="PostDetails" class="card-link">
                     <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
                     @p.Comments.Count
-                </a>
-                <a class="card-link">
-                    <img width="30px" height="30px" src="https://toppng.com/uploads/preview/share-png-file-share-icon-free-download-1156313309811bbndeiii.png" />
-                    2
                 </a>
             </div>
         </div>

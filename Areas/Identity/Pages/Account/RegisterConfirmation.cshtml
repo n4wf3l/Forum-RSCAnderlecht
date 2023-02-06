@@ -1,7 +1,10 @@
 ﻿@page
 @model RegisterConfirmationModel
+@using RSCAnderlechtF.Models;
+@inject LanguageService language
+
 @{
-    ViewData["Title"] = "Register confirmation";
+    ViewData["Title"] = @language.Getkey("Register confirmation");
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -9,14 +12,15 @@
     if (@Model.DisplayConfirmAccountLink)
     {
         <p>
-            You have received an email in your mailbox! Confirm your account by logging into your account (For security reasons & for Waldo Heudens : <a href="https://mailtrap.io/inboxes/2024236/messages">Connect to Mailtrap</a> with email ajari.nawfel@hotmail.com & Password : M... (zie Teams) or
-            <a id="confirm-link" href="@Model.EmailConfirmationUrl">click here to confirm your account</a>
+            @language.Getkey("Check your mailbox, an email has been sent to you to confirm your account") (Waldo Heudens : <a href="https://mailtrap.io/inboxes/2024236/messages">Connect to Mailtrap</a> with email ajari.nawfel@hotmail.com & Password : (zie Teams)</p>
+           
+            <p><a id="confirm-link" href="@Model.EmailConfirmationUrl">@language.Getkey("Click here to confirm directly your account").</a>
         </p>
     }
     else
     {
 <p>
-        Please check your email to confirm your account.
+        @language.Getkey("Please check your email to confirm your account")
 </p>
     }
 }

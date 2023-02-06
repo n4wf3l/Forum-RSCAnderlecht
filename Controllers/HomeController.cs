@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Host;
 using RSCAnderlechtF.Models;
 using System.Diagnostics;
 
@@ -14,6 +15,7 @@ namespace RSCAnderlechtF.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+    
         }
 
         public IActionResult Index()
@@ -32,6 +34,30 @@ namespace RSCAnderlechtF.Controllers
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Home");
+            }
+
+            return View();
+        }
+
+        [AllowAnonymous]
+        public IActionResult Register()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Home");
+            }
+
+            return View();
+        }
+
+
+
         private void SetCookie()
         {
             Response.Cookies.Append("MyCookie", "cookie-value",
@@ -48,6 +74,7 @@ namespace RSCAnderlechtF.Controllers
             return string.Empty;
         }
 
+        [Authorize]
         private List<Post> GetAllPosts()
         {
             using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
@@ -62,7 +89,7 @@ namespace RSCAnderlechtF.Controllers
                 }).ToList();
             }
         }
-
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();

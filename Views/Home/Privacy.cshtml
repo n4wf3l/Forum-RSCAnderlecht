@@ -1,6 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@using RSCAnderlechtF.Models;
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("privacy");
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+
+<head>
+    <style>
+  body {
+    background-color: #4C2484;
+    color: white;
+    text-align: center;
+  }
+
+  h1, h2 {
+    margin-top: 50px;
+  }
+
+  ul {
+    text-align: left;
+    margin: 20px auto;
+    width: 60%;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    <p>@language.Getkey("We take the privacy of our users very seriously. This privacy policy outlines the types of information we collect from our users and how we use it.")</p>
+    <h2>@language.Getkey("Information Collected")</h2>
+    <p>@language.Getkey("We may collect the following information from our users:")</p>
+    <ul>
+        <li>&#8594; @language.Getkey("Contact information such as name, email address and telephone number")</li>
+        <li>&#8594; @language.Getkey("Account information such as username and password")</li>
+        <li>&#8594; @language.Getkey("Demographic information such as age, gender and city of residence")</li>
+    </ul>
+    <h2>@language.Getkey("Use of Information")</h2>
+    <p>@language.Getkey("Our website uses cookies to enhance the user experience and gather information about site usage. A cookie is a small text file that is stored on the user's device by the web browser. The information gathered through cookies may include the pages visited, the time spent on the site and the advertisements clicked. This information is used to improve our website and services. Users can choose to disable cookies in their web browser, but this may limit their ability to use certain features on our site. We use the information collected from our users for the following purposes:")</p>
+    <ul>
+        <li>&#8594; @language.Getkey("To provide services and features to our users")</li>
+        <li>&#8594; @language.Getkey("To improve our website and services")</li>
+        <li>&#8594; @language.Getkey("To personalize the user experience")</li>
+        <li>&#8594; @language.Getkey("To send promotional and informational communications to our users")</li>
+    </ul>
+    <h2>@language.Getkey("Sharing of Information")</h2>
+    <p>@language.Getkey("We do not share the information of our users with third parties, except in the following cases:")</p>
+    <ul>
+        <li>&#8594; @language.Getkey("When required by law")</li>
+        <li>&#8594; @language.Getkey("When we believe in good faith that disclosure is necessary to protect our rights and those of our users")</li>
+    </ul>
+</body>

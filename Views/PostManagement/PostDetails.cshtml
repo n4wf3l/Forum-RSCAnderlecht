@@ -1,4 +1,5 @@
 ﻿@model Post
+@inject LanguageService language
 @{
 }
 
@@ -134,11 +135,11 @@ body{
     <div class="card shadow" style="width: 38rem;">
         <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">
-                Posted By
+                @language.Getkey("posted by")
             </h6>
             <h5 class="card-title">@Model.User.NormalizedUserName</h5>
             <h6 class="card-subtitle mb-2 text-muted">
-                Posted At: @Model.CreateAt
+                @language.Getkey("at") : @Model.CreateAt
             </h6> <hr>
             <p class="card-text">@Model.Content</p>
             <a href="#" class="card-link">
@@ -149,10 +150,6 @@ body{
                 <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
                 5
             </a>
-            <a class="card-link">
-                <img width="30px" height="30px" src="https://toppng.com/uploads/preview/share-png-file-share-icon-free-download-1156313309811bbndeiii.png" />
-                2
-            </a>
         </div>
     </div>
 <br />
@@ -161,10 +158,10 @@ body{
 		<div class="row">
 			<div class="col-6">									
 				<div class="form-group">
-					<textarea name="body" class="form-input" required="" placeholder="Your text"></textarea>
+                        <textarea name="body" class="form-input" required="" placeholder=@language.Getkey("Type content")></textarea>
                     <input style="display:none" asp-for="@Model.Id"/>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Upload Comment</button>
+                    <button type="submit" class="btn btn-primary pull-right">@language.Getkey("Comment")</button>
 				</div>
 		</div>
 	</form>
@@ -197,7 +194,7 @@ body{
             }
 
         } else{
-            <p>No Comment Posted Yet...</p>
+            <p>@language.Getkey("There are currently no comments")</p>
         }
 </div>
 </div>

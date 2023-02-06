@@ -22,7 +22,7 @@
                     <input type="email" class="form-control" name="Email" placeholder="Email"/>
                 </div><br />
                 <div>
-                    <input type="password" class="form-control" name="PasswordHash" placeholder="type content">
+                        <input type="password" class="form-control" name="PasswordHash" placeholder=@language.Getkey("Type content")>
                     </div><br />
                     <div>
                         <select name="ConcurrencyStamp" class="form-control">
@@ -33,8 +33,8 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Update Post</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@language.Getkey("Close")</button>
+                    <button type="submit" class="btn btn-primary">@language.Getkey("Create")</button>
             </div>
         </div>
         </form>
@@ -45,10 +45,10 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">User Name</th>
+            <th scope="col">@language.Getkey("Username")</th>
             <th scope="col">Email</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Action</th>
+            <th scope="col">@language.Getkey("Create At")</th>
+            <th scope="col">@language.Getkey("Action")</th>
         </tr>
     </thead>
     <tbody>
