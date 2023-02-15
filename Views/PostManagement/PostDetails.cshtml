@@ -144,11 +144,12 @@ body{
             <p class="card-text">@Model.Content</p>
             <a href="#" class="card-link">
                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/126/126473.png" />
-                23
+                0
             </a>
             <a asp-route-postId="@Model.Id" asp-controller="PostManagement" asp-action="PostDetails" class="card-link">
                 <img width="30px" height="30px" src="https://thumbs.dreamstime.com/b/comment-icon-vector-illustration-white-background-127593296.jpg" />
-                5
+                
+                @Model.Comments.Count()
             </a>
         </div>
     </div>
