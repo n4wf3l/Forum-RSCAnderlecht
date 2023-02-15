@@ -22,6 +22,10 @@
         color: white;
     }
 
+    .hidden {
+        display: none;
+    }
+
 
 </style>
 
@@ -51,7 +55,7 @@
     </div>
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped text-white">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -64,14 +68,14 @@
     <tbody>
         @foreach(Post p in Model)
         {
-            <tr>
+            <tr class=" text-white">
                 <th scope="row">@p.Id</th>
                 <td>@p.Content</td>
-                <td>25</td>
-                <td>24 JAN 2023</td>
+                <td>@p.Comments.Count()</td>
+                <td>@p.CreateAt</td>
                 <td>
-                    <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/84/84380.png" />
-                    <form asp-route-postId="@p.Id" method="post"asp-action="deletepost">
+                    <img data-bs-toggle="modal" data-bs-target="#updateModal" width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/84/84380.png" />
+                    <form asp-route-postId="@p.Id" method="post" asp-action="deletepost">
                         <button type="submit">
                             <img width="20px" height="20px" src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" />
 
@@ -79,6 +83,29 @@
 
                     </form>
                     </td>
+
+                <!-- Modal -->
+                <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <form asp-route-postId="@p" method="post" asp-action="updatepost">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updateModalLabel">Update Post</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <input name="UserId" class="hidden"  asp-for="@p.UserId">
+                                <input name="Id" class="hidden" asp-for="@p.Id">
+                                <div class="modal-body">
+                                    <textarea class="form-control" asp-for="@p.Content" name="Content" placeholder=@language.Getkey("Type content")></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@language.Getkey("Close")</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </tr>
 
         }

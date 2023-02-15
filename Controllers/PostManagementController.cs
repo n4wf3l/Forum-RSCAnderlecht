@@ -62,7 +62,15 @@ namespace RSCAnderlechtF.Controllers
                 {
                     return NoContent();
                 }
-                var myAllPosts = _context.Posts.Where(p => p.UserId == currentUser.Id).ToList();
+                var myAllPosts = _context.Posts.Where(p => p.UserId == currentUser.Id).Select(p => new Post
+                {
+                    Comments = p.Comments,
+                    Id = p.Id,
+                    Content = p.Content,
+                    CreateAt = p.CreateAt,
+                    UserId = p.UserId
+
+                }).ToList();
                 return View("MyPosts", myAllPosts);
 
             }
@@ -77,15 +85,45 @@ namespace RSCAnderlechtF.Controllers
 
                 if (postToDel != null)
                 {
+                    var commentsToDel = _context.Comments.Where(c => c.PostId == postToDel.Id);
+                    if (commentsToDel != null)
+                    {
+                        _context.Comments.RemoveRange(commentsToDel);
+                        _context.SaveChanges();
+                    }
+
                     _context.Posts.Remove(postToDel);
                     _context.SaveChanges();
-                    return View("MyPosts", _context.Posts.ToList());
+
+                    var currentUser = _context.AspNetUsers.Where(u => u.Email == User.Identity.Name).FirstOrDefault();
+
+                    return MyPosts();
                 }
             }
             return NotFound();
         }
 
-        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult UpdatePost(Post post)
+        {
+            if (post == null) return NotFound();
+
+            using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            {
+                var myPost = _context.Posts.Where(p => p.Id == post.Id).FirstOrDefault();
+
+                myPost.Content = post.Content;
+
+                _context.SaveChanges();
+
+                var currentUser = _context.AspNetUsers.Where(u => u.Email == User.Identity.Name).FirstOrDefault();
+
+                return View("MyPosts", _context.Posts.Where(p => p.UserId == currentUser.Id).ToList());
+
+            }
+        }
+
+            [AllowAnonymous]
         public IActionResult PostDetails(int postId)
         {
             using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
@@ -97,7 +135,13 @@ namespace RSCAnderlechtF.Controllers
                         User = p.User,
                         CreateAt = p.CreateAt,
                         Id = p.Id,
-                        Comments = p.Comments,
+                        Comments = p.Comments.Select(c => new Comment
+                        {
+                            Body = c.Body,
+                            User = c.User,
+                            CreatedAt = c.CreatedAt
+
+                        }).ToList(),
                     }).FirstOrDefault();
 
                 return View(postData);

@@ -174,9 +174,9 @@ namespace RSCAnderlechtF.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@USER.COM",
                             NormalizedUserName = "USER1@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJqSfiZgMy3/YnxpUyiSjUhRQxcaihz/63jNn3c/Dw+MvEvXWJ+zxK+O8hzUmLheDA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM/ibInDO1nRGcfRgWkgMUfQbzKhKVbJ/bcbqITswUsFR8+lPb9Jcpr0/I4EkunNtg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f6766762-629d-4c0d-9eaa-97ee8d54a512",
+                            SecurityStamp = "5ba5edb8-1379-4516-974c-b217fae57947",
                             TwoFactorEnabled = false,
                             UserName = "user1@user.com"
                         },
@@ -189,9 +189,9 @@ namespace RSCAnderlechtF.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN1@TEST.COM",
                             NormalizedUserName = "ADMIN1@TEST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEObw7zf7lR9Tlm/yGxEoIjdoZK8oE+EI0JzreR7Li+XOr4EGFCI0rcE3qgSeCyAGNw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOk6nVu4BttAREvEUEdwCEXvHO9PT/Z1WoA4F3l8UmoqGvQ8UKU3xt6N1M4gn6IShQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5c4f58f0-2738-4837-add1-93d22ab50f44",
+                            SecurityStamp = "a181d5a3-fba0-40cd-964e-b5af7d9f3740",
                             TwoFactorEnabled = false,
                             UserName = "admin1@test.com"
                         });
@@ -338,6 +338,24 @@ namespace RSCAnderlechtF.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Body = "This is my first comment",
+                            CreatedAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3548),
+                            PostId = 1,
+                            UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Body = "This is my first comment",
+                            CreatedAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3550),
+                            PostId = 2,
+                            UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1"
+                        });
                 });
 
             modelBuilder.Entity("RSCAnderlechtF.Models.Post", b =>
@@ -366,6 +384,22 @@ namespace RSCAnderlechtF.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "This is my first post",
+                            CreateAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3522),
+                            UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "This is my second post",
+                            CreateAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3527),
+                            UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb"
+                        });
                 });
 
             modelBuilder.Entity("AspNetRoleAspNetUser", b =>

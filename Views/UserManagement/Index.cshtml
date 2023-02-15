@@ -3,6 +3,12 @@
 @{
 }
 
+<style>
+    .hidden{
+        display: none;
+    }
+</style>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <b>+</b> @language.Getkey("Create new user")
@@ -55,12 +61,13 @@
         @foreach(AspNetUser p in Model)
         {
             <tr>
-                <th scope="row">@p.Id</th>
+                <th id="UserId" scope="row">@p.Id</th>
                 <td>@p.UserName</td>
-                <td>@p.Email</td>
+                <td id="@("userEmail" + p.Id)">@p.Email</td>
                 <td>24 JAN 2023</td>
                 <td>
-                    <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/84/84380.png" />
+                    <button data-bs-toggle="modal" data-bs-target="#updateModal" id="btnsave+@p.Id" onclick="abc('@p.Id')" type="button">edit</button>
+                    <img data-bs-toggle ="modal" data-bs-target="#updateModal" width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/84/84380.png" />
                     <form asp-route-userId="@p.Id" method="post"asp-action="deleteUser">
                         <button type="submit">
                             <img width="20px" height="20px" src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" />
@@ -70,9 +77,62 @@
 
                     </form>
                     </td>
+
+
             </tr>
 
         }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" action="usermanagement/updateUser">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input id="updateUserId" class="hidden" name="Id">
+                    <div>
+                        <input id="updateEmail" type="email" class="form-control" name="Email" placeholder="Type Email" />
+                    </div><br />
+                    <div>
+                        <input type="password" class="form-control" id="updateUserPassword" name="PasswordHash" placeholder="Password">
+                    </div><br />
+                    <div>
+                        <select name="ConcurrencyStamp" class="form-control">
+                            <option selected disabled>Select Role</option>
+                            <option value="68bdf9cb-4866-444d-8cf5-56d54170dc81">Admin</option>
+                            <option value="544ac087-b472-4914-8104-a55bd381d0e9">User</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@language.Getkey("Close")</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+
+    function abc(id) {
+        
+        var email = document.getElementById("userEmail"+id).innerHTML
+
+
+        document.getElementById("updateEmail").value = email
+        document.getElementById("updateUserId").value = id     
+
+        
+
+    }
+
+</script>
 

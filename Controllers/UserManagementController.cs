@@ -63,7 +63,44 @@ namespace RSCAnderlechtF.Controllers
                 }
             }
         }
+
+
+
+
         [HttpPost]
+        [AllowAnonymous]
+        public IActionResult UpdateUser(AspNetUser user)
+        {
+            if (user == null) return BadRequest();
+
+            using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())
+            {
+                var passwordHasher = new PasswordHasher<AspNetUser>();
+
+                var userObj = _context.AspNetUsers.Where(u => u.Id == user.Id).FirstOrDefault();
+                userObj.EmailConfirmed = true;
+                userObj.UserName = user.Email;
+                userObj.NormalizedEmail = user.Email;
+                userObj.Email = user.Email;
+                userObj.NormalizedUserName = user.Email;
+                userObj.SecurityStamp = Guid.NewGuid().ToString();
+                userObj.PasswordHash = passwordHasher.HashPassword(user, user.PasswordHash);
+
+                _context.SaveChanges();
+
+                var userRoleObj = _context.AspNetUserRoles.Where(ur => ur.UserId == user.Id).FirstOrDefault();
+                if (userRoleObj != null)
+                {
+                    userRoleObj.RoleId = user.ConcurrencyStamp;
+
+                    _context.SaveChanges();
+                }
+
+                return Index();
+            }
+        }
+
+                [HttpPost]
         public IActionResult DeleteUser(string userId)
         {
             using (var _context = new aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context())

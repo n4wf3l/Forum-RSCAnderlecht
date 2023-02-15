@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FluentAssertions.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -216,6 +217,16 @@ namespace RSCAnderlechtF.Models
                 new AspNetUserRole() {Id = 2,  RoleId = "68bdf9cb-4866-444d-8cf5-56d54170dc81", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" }
                 );
             #endregion
+
+            builder.Entity<Post>().HasData(
+                new Post() { Id = 1, Content = "This is my first post", UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", CreateAt = DateTime.UtcNow },
+                new Post() { Id = 2, Content = "This is my second post", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", CreateAt = DateTime.UtcNow }
+                );
+
+            builder.Entity<Comment>().HasData(
+                new Comment() { Id = 1, Body = "This is my first comment", UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", PostId = 1, CreatedAt = DateTime.UtcNow },
+                new Comment() { Id = 2, Body = "This is my first comment", UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", PostId = 2, CreatedAt = DateTime.UtcNow }
+                );
 
         }
 

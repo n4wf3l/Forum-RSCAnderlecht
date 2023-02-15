@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RSCAnderlechtF.Migrations
 {
-    public partial class test2 : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -238,19 +238,37 @@ namespace RSCAnderlechtF.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", 0, null, "admin1@test.com", true, false, null, "ADMIN1@TEST.COM", "ADMIN1@TEST.COM", "AQAAAAEAACcQAAAAEKG933c+kq2ezRJby6DA6n9Z3Xzv59Rp/XGM53ACRNUmSQdKUEdxvcq9I3gwMsz5FA==", null, false, "09a7186a-3efa-4f11-aa44-7c9e4be20c43", false, "admin1@test.com" },
-                    { "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", 0, null, "user1@user.com", true, false, null, "USER1@USER.COM", "USER1@USER.COM", "AQAAAAEAACcQAAAAEE8o0+j2RecVDweV5B9cdXvgSyvLRVrHjyt7rtPjwvPpkeO23+9buIBfpO5EWSPtcw==", null, false, "cdead4bc-8413-4f1a-91f6-166a085d7e8d", false, "user1@user.com" }
+                    { "99d666d3-40ed-4e9d-bc18-e56f2b69dceb", 0, null, "admin1@test.com", true, false, null, "ADMIN1@TEST.COM", "ADMIN1@TEST.COM", "AQAAAAEAACcQAAAAEOk6nVu4BttAREvEUEdwCEXvHO9PT/Z1WoA4F3l8UmoqGvQ8UKU3xt6N1M4gn6IShQ==", null, false, "a181d5a3-fba0-40cd-964e-b5af7d9f3740", false, "admin1@test.com" },
+                    { "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1", 0, null, "user1@user.com", true, false, null, "USER1@USER.COM", "USER1@USER.COM", "AQAAAAEAACcQAAAAEM/ibInDO1nRGcfRgWkgMUfQbzKhKVbJ/bcbqITswUsFR8+lPb9Jcpr0/I4EkunNtg==", null, false, "5ba5edb8-1379-4516-974c-b217fae57947", false, "user1@user.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "Id", "RoleId", "UserId" },
-                values: new object[] { 1, "544ac087-b472-4914-8104-a55bd381d0e9", "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" });
+                values: new object[,]
+                {
+                    { 1, "544ac087-b472-4914-8104-a55bd381d0e9", "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" },
+                    { 2, "68bdf9cb-4866-444d-8cf5-56d54170dc81", "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" }
+                });
 
             migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "Id", "RoleId", "UserId" },
-                values: new object[] { 2, "68bdf9cb-4866-444d-8cf5-56d54170dc81", "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" });
+                table: "Posts",
+                columns: new[] { "Id", "Content", "CreateAt", "UserId" },
+                values: new object[,]
+                {
+                    { 1, "This is my first post", new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3522), "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" },
+                    { 2, "This is my second post", new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3527), "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Comments",
+                columns: new[] { "Id", "Body", "CreatedAt", "PostId", "UserId" },
+                values: new object[] { 1, "This is my first comment", new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3548), 1, "99d666d3-40ed-4e9d-bc18-e56f2b69dceb" });
+
+            migrationBuilder.InsertData(
+                table: "Comments",
+                columns: new[] { "Id", "Body", "CreatedAt", "PostId", "UserId" },
+                values: new object[] { 2, "This is my first comment", new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3550), 2, "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleAspNetUser_UsersId",

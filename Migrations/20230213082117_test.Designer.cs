@@ -12,8 +12,8 @@ using RSCAnderlechtF.Models;
 namespace RSCAnderlechtF.Migrations
 {
     [DbContext(typeof(aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context))]
-    [Migration("20230201165119_test2")]
-    partial class test2
+    [Migration("20230213082117_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -176,9 +176,9 @@ namespace RSCAnderlechtF.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@USER.COM",
                             NormalizedUserName = "USER1@USER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE8o0+j2RecVDweV5B9cdXvgSyvLRVrHjyt7rtPjwvPpkeO23+9buIBfpO5EWSPtcw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM/ibInDO1nRGcfRgWkgMUfQbzKhKVbJ/bcbqITswUsFR8+lPb9Jcpr0/I4EkunNtg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cdead4bc-8413-4f1a-91f6-166a085d7e8d",
+                            SecurityStamp = "5ba5edb8-1379-4516-974c-b217fae57947",
                             TwoFactorEnabled = false,
                             UserName = "user1@user.com"
                         },
@@ -191,9 +191,9 @@ namespace RSCAnderlechtF.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN1@TEST.COM",
                             NormalizedUserName = "ADMIN1@TEST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKG933c+kq2ezRJby6DA6n9Z3Xzv59Rp/XGM53ACRNUmSQdKUEdxvcq9I3gwMsz5FA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOk6nVu4BttAREvEUEdwCEXvHO9PT/Z1WoA4F3l8UmoqGvQ8UKU3xt6N1M4gn6IShQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "09a7186a-3efa-4f11-aa44-7c9e4be20c43",
+                            SecurityStamp = "a181d5a3-fba0-40cd-964e-b5af7d9f3740",
                             TwoFactorEnabled = false,
                             UserName = "admin1@test.com"
                         });
@@ -340,6 +340,24 @@ namespace RSCAnderlechtF.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Body = "This is my first comment",
+                            CreatedAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3548),
+                            PostId = 1,
+                            UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Body = "This is my first comment",
+                            CreatedAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3550),
+                            PostId = 2,
+                            UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1"
+                        });
                 });
 
             modelBuilder.Entity("RSCAnderlechtF.Models.Post", b =>
@@ -368,6 +386,22 @@ namespace RSCAnderlechtF.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "This is my first post",
+                            CreateAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3522),
+                            UserId = "a1ac0183-e84b-4fd2-b5b6-bc69b55519c1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "This is my second post",
+                            CreateAt = new DateTime(2023, 2, 13, 8, 21, 16, 818, DateTimeKind.Utc).AddTicks(3527),
+                            UserId = "99d666d3-40ed-4e9d-bc18-e56f2b69dceb"
+                        });
                 });
 
             modelBuilder.Entity("AspNetRoleAspNetUser", b =>
