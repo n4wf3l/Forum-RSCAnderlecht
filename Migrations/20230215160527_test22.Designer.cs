@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RSCAnderlechtF.Models;
 
@@ -11,9 +12,10 @@ using RSCAnderlechtF.Models;
 namespace RSCAnderlechtF.Migrations
 {
     [DbContext(typeof(aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182Context))]
-    partial class aspnetRSCAnderlechtF3E7AE6293255424A9837121B340A5182ContextModelSnapshot : ModelSnapshot
+    [Migration("20230215160527_test22")]
+    partial class test22
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

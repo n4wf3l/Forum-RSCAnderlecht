@@ -89,6 +89,7 @@ namespace RSCAnderlechtF.Controllers
                 }).ToList();
             }
         }
+
         [AllowAnonymous]
         public IActionResult Privacy()
         {
