@@ -1,6 +1,6 @@
 # RSCAnderlecht Forum
 
-This project utilizes ASP .NET Core MVC 6 and is updated on the feature-post branch. It focuses on creating a forum for RSC Anderlecht fans, with backend work primarily done in C#. Key features include Identity management, scaffolding, filter search, database connectivity, user authentication, role-based authorization, email confirmation, and multilingual support (EN-NL-FR).
+This project utilizes ASP .NET Core MVC 6 and is updated on the feature-post branch. It focuses on creating a forum for RSC Anderlecht fans, with backend work primarily done in C#. Key features include Identity management, scaffolding, filter search, database connectivity, user authentication, role-based authorization, email confirmation, and multilingual support (EN-NL-FR).  This project caters to supporters in three languages. Each registered user designates a favorite club and gains access to a range of features, including the ability to view and engage with content posted by fellow fans, complete with like functionality and beyond.
 
 ### Launch Instructions:
 
